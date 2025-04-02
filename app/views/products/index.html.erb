@@ -1,6 +1,8 @@
-<h1><%= t ".title" %></h1>
+<p style="color: green"><%= notice %></p>
 
-<%= link_to "New product", new_product_path if authenticated? %>
+<% content_for :title, "Products" %>
+
+<h1><%= t ".title" %></h1>
 
 <div id="products">
   <% @products.each do |product| %>
@@ -9,3 +11,5 @@
     </div>
   <% end %>
 </div>
+
+<%= link_to "New product", new_product_path if authenticated? %>
